@@ -1,15 +1,10 @@
-import { Button } from 'primereact/button';
+import LanguageState from './context/Language/LanguageState';
+import HomeScreen from './features/home/containers/HomeScreen';
 
-const App = () => {
-  const nameButton = 'Hola';
-  const mystyle = {
-    padding: '10rem',
-  };
-  return (
-    <div style={mystyle}>
-      <Button label={nameButton} icon="pi pi-check" />
-    </div>
-  );
-};
+const App = () => (
+  <LanguageState>
+    <HomeScreen />
+  </LanguageState>
+);
 
 export default App;
