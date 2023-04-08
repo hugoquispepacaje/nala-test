@@ -1,9 +1,10 @@
-import colors from '../../../../style/colors';
+import colors from '../../style/colors';
 
 const styles = {
-  mainContainer: {
+  appContainer: {
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
+    height: '100%',
     backgroundColor: colors.background,
   },
 };
