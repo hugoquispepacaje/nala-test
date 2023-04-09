@@ -9,7 +9,7 @@ export default {
   },
   title: {
     textAlign: 'center' as const,
-    fontSize: '1.2rem',
+    fontSize: '1.6rem',
     fontWeight: 'bold',
   },
 };

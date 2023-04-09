@@ -1,12 +1,21 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AppContainer from './components/AppContainer/AppContainer';
 import LanguageState from './context/Language/LanguageState';
-import HomeScreen from './features/home/containers/HomeScreen';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import HomeScreen from './features/home/containers/HomeScreen/HomeScreen';
+import ReportScreen from './features/report/containers/ReportScreen/ReportScreen';
 
 const App = () => (
   <LanguageState>
-    <AppContainer>
-      <HomeScreen />
-    </AppContainer>
+    <BrowserRouter>
+      <AppContainer>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/report" element={<ReportScreen />} />
+          <Route path="*" element={<ErrorBoundary />} />
+        </Routes>
+      </AppContainer>
+    </BrowserRouter>
   </LanguageState>
 );
 

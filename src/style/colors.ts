@@ -1,6 +1,7 @@
 export default {
-  primary: '#183446',
-  background: 'rgba(0,144,193,0.40)',
-  primary_dark: '#0F084B',
+  primary: '#2C64FA',
+  background: '#F8FAFF',
+  primary_dark: '#0000FE',
+  primary_text: '#383838',
   white: '#FFFFFF',
 };

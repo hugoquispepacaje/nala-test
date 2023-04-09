@@ -1,14 +1,21 @@
+import { Image } from 'primereact/image';
 import { Button } from 'primereact/button';
 import Styles from './styles';
+import Props from './types';
 import useHeader from './useHeader';
 
-const Header = () => {
-  const { language, onChangeLanguage, otherLanguage } = useHeader();
+const Header = ({ openSidebar }: Props) => {
+  const { goHome } = useHeader();
   return (
     <div style={Styles.headerContainer}>
-      <h1 style={Styles.title}>{language.data.title}</h1>
+      <Image
+        src="https://www.nalarocks.com/wp-content/uploads/2022/09/logo-blanco.png"
+        style={Styles.image}
+        height="50px"
+        onClick={goHome}
+      />
       <div>
-        <Button label={otherLanguage} onClick={onChangeLanguage} severity="info" rounded />
+        <Button icon="pi pi-bars" onClick={openSidebar} style={Styles.button} text />
       </div>
     </div>
   );

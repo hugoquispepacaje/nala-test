@@ -1,18 +1,13 @@
-import { useContext, useState } from 'react';
-import LanguageContext from '../../context/Language/LanguageContext';
-import { getInitLanguageLabel, getLanguageToChange, getLanguageToChangeLabel } from '../../utils/utiles';
+import { useNavigate } from 'react-router-dom';
 
 const useHeader = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
-  const [otherLanguage, setOtherLanguage] = useState<string>(
-    getInitLanguageLabel(language.languageLabel),
-  );
-  const onChangeLanguage = () => {
-    setOtherLanguage(getLanguageToChangeLabel(language.languageLabel));
-    setLanguage(getLanguageToChange(language.languageLabel));
+  const navigate = useNavigate();
+
+  const goHome = () => {
+    navigate('/');
   };
 
-  return { language, onChangeLanguage, otherLanguage };
+  return { goHome };
 };
 
 export default useHeader;

@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 import LanguageContext from '../../../../context/Language/LanguageContext';
 
-const useFooter = () => {
+const usePreviewTable = () => {
   const { language } = useContext(LanguageContext);
   return {
-    cancelLabel: language.data.cancel,
-    editLabel: language.data.edit,
+    previewDataLaber: language.data.previewTable.previewData,
   };
 };
 
-export default useFooter;
+export default usePreviewTable;

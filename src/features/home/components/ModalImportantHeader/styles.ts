@@ -13,4 +13,8 @@ export default {
     flexDirection: 'column' as const,
     gap: '0.8rem',
   },
+  messageContainer: {
+    justifyContent: 'start',
+    padding: '1rem',
+  },
 };

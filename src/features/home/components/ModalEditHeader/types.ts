@@ -8,10 +8,4 @@ interface Props {
 interface Form {
   [key: string]: string;
 }
-
-interface FooterProps {
-  onSave: () => void;
-  onCancel: () => void;
-}
-
-export { type Props, type Form, type FooterProps };
+export { type Props, type Form };
