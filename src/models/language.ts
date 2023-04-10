@@ -5,6 +5,7 @@ interface Report {
   workerIncreaseLabel: string;
   increaseSalaryWorkersTitle: string;
   organizationChartTitle: string;
+  printLabel: string;
 }
 
 interface ImportantHeader {

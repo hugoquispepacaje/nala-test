@@ -38,6 +38,7 @@ const dataEN: Data = {
     workerIncreaseLabel: 'Increased amount',
     increaseSalaryWorkersTitle: 'Raises',
     organizationChartTitle: 'Organizational Chart',
+    printLabel: 'Print Chart',
   },
 };
 

@@ -1,11 +1,10 @@
-// eslint-disable-next-line import/no-unresolved
-import TreeNode from 'primereact/treenode';
-import { OrganizationChart } from 'primereact/organizationchart';
+import { Button } from 'primereact/button';
 import { TabView, TabPanel } from 'primereact/tabview';
 import useReportScreen from './useReportScreen';
 import TotalSalaryCard from '../../components/TotalSalaryCard/TotalSalaryCard';
 import NewWorkersCard from '../../components/NewWorkersCard/NewWorkersCard';
 import RaisesCard from '../../components/RaisesCard/RaisesCard';
+import OrgChart from '../../components/OrgChart/OrgChart';
 import {
   generateOrgChart,
   getIncreaseSalaryWorkers,
@@ -14,17 +13,17 @@ import {
 } from '../../utils/utiles';
 import Styles from './styles';
 import { montoMoneda } from '../../../../utils/utiles';
+import { button } from '../../../../style/commons';
 
 const ReportScreen = () => {
-  const { monthData, header } = useReportScreen();
-  const nodeTemplate = (node: TreeNode) => (
-    <div style={Styles.labelsContainer}>
-      <p style={Styles.chip}>{node?.data['Nivel Jerárquico']}</p>
-      <p style={Styles.nameLabel}>{node.label}</p>
-      <p style={Styles.label}>{node?.data[header.department]}</p>
-      <p style={Styles.label}>{node?.data.Area}</p>
-    </div>
-  );
+  const {
+    monthData,
+    header,
+    orgChartRef,
+    handlePrint,
+    printLabel,
+    organizationChartTitle,
+  } = useReportScreen();
   return (
     <TabView scrollable>
       {Object.keys(monthData).map((monthName) => (
@@ -40,10 +39,16 @@ const ReportScreen = () => {
               increaseSalaryWorkers={getIncreaseSalaryWorkers(monthName, monthData, header)}
             />
           </div>
-          <OrganizationChart
-            value={[generateOrgChart(monthData[monthName], header)]}
-            nodeTemplate={nodeTemplate}
-          />
+          <h3 style={Styles.orgChartTitle}>{organizationChartTitle}</h3>
+          <div style={Styles.buttonContainer}>
+            <Button label={printLabel} onClick={handlePrint} style={button} rounded />
+          </div>
+          <div ref={orgChartRef}>
+            <OrgChart
+              data={generateOrgChart(monthData[monthName], header)}
+              header={header}
+            />
+          </div>
         </TabPanel>
       ))}
     </TabView>
