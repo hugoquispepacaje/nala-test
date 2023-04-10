@@ -5,7 +5,4 @@ interface Props {
   setData: (value: any[]) => void,
 }
 
-interface Form {
-  [key: string]: string;
-}
-export { type Props, type Form };
+export default Props;

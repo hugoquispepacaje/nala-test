@@ -1,5 +1,4 @@
 import { useContext, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import getExcelToJson from '../../../../utils/xlsx';
 import LanguageContext from '../../../../context/Language/LanguageContext';
 
@@ -12,7 +11,6 @@ const useImportFile = (
 ) => {
   const fileUploadRef = useRef<any>(null);
   const { language } = useContext(LanguageContext);
-  const navigate = useNavigate();
 
   const uploadHandler = (e: any) => {
     const file: File = e.files[0];

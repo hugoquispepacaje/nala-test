@@ -21,6 +21,23 @@ const getLanguageToChange = (languageLabel: string) => {
   return esLanguageLabel === languageLabel ? enLanguage : esLanguage;
 };
 
+const montoMoneda = (valor: number): string => {
+  if (typeof valor !== 'undefined' && valor !== null) {
+    const number = valor.toString();
+    if (number === '0') return '$0';
+    if (valor < 0) {
+      const numberFormateado = number.replace('-', '');
+      return `-$${numberFormateado.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`;
+    }
+    return `$${number.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}`;
+  }
+  return '$ *****';
+};
+
 export {
-  getHeaders, getInitLanguageLabel, getLanguageToChangeLabel, getLanguageToChange,
+  getHeaders,
+  getInitLanguageLabel,
+  getLanguageToChangeLabel,
+  getLanguageToChange,
+  montoMoneda,
 };

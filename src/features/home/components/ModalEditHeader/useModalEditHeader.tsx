@@ -1,14 +1,14 @@
 import { useState, useEffect, useContext } from 'react';
 import { getDataWithNewHeader, getInitForm } from './utiles';
-import { Form } from './types';
 import LanguageContext from '../../../../context/Language/LanguageContext';
+import ObjectGeneric from '../../../../models/ObjectGeneric';
 
 const useModalEditHeader = (
   data: any[],
   setData: (value: any[]) => void,
   setVisible: (value: boolean) => void,
 ) => {
-  const [form, setForm] = useState<Form>({});
+  const [form, setForm] = useState<ObjectGeneric>({});
   const { language } = useContext(LanguageContext);
   useEffect(() => {
     const headers = Array.isArray(data) && data.length > 0 ? Object.keys(data[0]) : [];

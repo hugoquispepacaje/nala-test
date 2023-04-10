@@ -5,6 +5,7 @@ import {
   useRef,
 } from 'react';
 import { Toast } from 'primereact/toast';
+import { useNavigate } from 'react-router-dom';
 import { getHeaders } from '../../../../utils/utiles';
 import LanguageContext from '../../../../context/Language/LanguageContext';
 
@@ -14,6 +15,7 @@ const useModalImportantHeader = (
 ) => {
   const toast = useRef<Toast>(null);
   const { language } = useContext(LanguageContext);
+  const navigate = useNavigate();
   const [headers, setHeaders] = useState<string[]>([]);
   const [id, setId] = useState<string>('');
   const [bossId, setBossId] = useState<string>('');
@@ -70,6 +72,20 @@ const useModalImportantHeader = (
     }
     clearFields();
     setVisible(false);
+    navigate('/report', {
+      state: {
+        report: {
+          data,
+          header: {
+            id,
+            bossId,
+            department,
+            salary,
+            startDate,
+          },
+        },
+      },
+    });
   };
 
   return {

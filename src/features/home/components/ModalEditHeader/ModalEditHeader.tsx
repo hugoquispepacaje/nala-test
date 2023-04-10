@@ -1,6 +1,6 @@
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
-import { Props } from './types';
+import Props from './types';
 import useModalEditHeader from './useModalEditHeader';
 import Styles from './styles';
 import ModalFooter from '../../../../components/ModalFooter/ModelFooter';
