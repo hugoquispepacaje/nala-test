@@ -31,6 +31,14 @@ const dataES: Data = {
     errorMessageHeader: 'Error de validación',
     errorMessage: 'Se deben seleccionar los campos.',
   },
+  report: {
+    totalSalaryTitle: 'Salario Total Pagado',
+    newWorkersTitle: 'Nuevos Trabajadores',
+    workerNameLabel: 'Nombre',
+    workerIncreaseLabel: 'Monto aumentado',
+    increaseSalaryWorkersTitle: 'Aumentos',
+    organizationChartTitle: 'Organigrama',
+  },
 };
 
 export default dataES;

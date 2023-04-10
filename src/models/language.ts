@@ -1,3 +1,12 @@
+interface Report {
+  totalSalaryTitle: string;
+  newWorkersTitle: string;
+  workerNameLabel: string;
+  workerIncreaseLabel: string;
+  increaseSalaryWorkersTitle: string;
+  organizationChartTitle: string;
+}
+
 interface ImportantHeader {
   headerTitle: string;
   departmentLabel: string;
@@ -35,6 +44,7 @@ interface Data {
   sidebar: SidebarMenu;
   previewTable: PreviewTable;
   importantHeader: ImportantHeader;
+  report: Report;
 }
 
 interface LanguageData {

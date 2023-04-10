@@ -31,6 +31,14 @@ const dataEN: Data = {
     errorMessageHeader: 'Validation error',
     errorMessage: 'Fields must be selected.',
   },
+  report: {
+    totalSalaryTitle: 'Total Salary Paid',
+    newWorkersTitle: 'New Workers',
+    workerNameLabel: 'Name',
+    workerIncreaseLabel: 'Increased amount',
+    increaseSalaryWorkersTitle: 'Raises',
+    organizationChartTitle: 'Organizational Chart',
+  },
 };
 
 export default dataEN;

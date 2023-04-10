@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-unresolved
+import moment from 'moment';
 import languageData from '../data/languageData';
 
 const getHeaders = (line: Object): string[] => Object.keys(line);
@@ -34,10 +36,28 @@ const montoMoneda = (valor: number): string => {
   return '$ *****';
 };
 
+const getMonthFormatted = (month: string): string => (
+  moment(month, 'DD-MM-YYYY').format('MM-YYYY')
+);
+
+const getPreviusMonth = (month: string): string => {
+  const numberMonth: number = parseInt(month.split('-')[0], 10);
+  const numberYear: number = parseInt(month.split('-')[1], 10);
+  if (numberMonth === 1) {
+    return `12-${numberYear - 1}`;
+  }
+  if (numberMonth < 10) {
+    return `0${numberMonth - 1}-${numberYear}`;
+  }
+  return `${numberMonth - 1}-${numberYear}`;
+};
+
 export {
   getHeaders,
   getInitLanguageLabel,
   getLanguageToChangeLabel,
   getLanguageToChange,
   montoMoneda,
+  getMonthFormatted,
+  getPreviusMonth,
 };

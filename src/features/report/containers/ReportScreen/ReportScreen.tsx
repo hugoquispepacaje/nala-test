@@ -3,8 +3,17 @@ import TreeNode from 'primereact/treenode';
 import { OrganizationChart } from 'primereact/organizationchart';
 import { TabView, TabPanel } from 'primereact/tabview';
 import useReportScreen from './useReportScreen';
-import { generateOrgChart } from '../../utils/utiles';
+import TotalSalaryCard from '../../components/TotalSalaryCard/TotalSalaryCard';
+import NewWorkersCard from '../../components/NewWorkersCard/NewWorkersCard';
+import RaisesCard from '../../components/RaisesCard/RaisesCard';
+import {
+  generateOrgChart,
+  getIncreaseSalaryWorkers,
+  getNewWorkers,
+  getTotalSalary,
+} from '../../utils/utiles';
 import Styles from './styles';
+import { montoMoneda } from '../../../../utils/utiles';
 
 const ReportScreen = () => {
   const { monthData, header } = useReportScreen();
@@ -20,6 +29,17 @@ const ReportScreen = () => {
     <TabView scrollable>
       {Object.keys(monthData).map((monthName) => (
         <TabPanel header={monthName} key={monthName}>
+          <div style={Styles.infoContainer}>
+            <TotalSalaryCard
+              totalSalary={montoMoneda(getTotalSalary(monthData[monthName], header.salary))}
+            />
+            <NewWorkersCard
+              newWorkers={getNewWorkers(monthData[monthName], monthName, header.startDate)}
+            />
+            <RaisesCard
+              increaseSalaryWorkers={getIncreaseSalaryWorkers(monthName, monthData, header)}
+            />
+          </div>
           <OrganizationChart
             value={[generateOrgChart(monthData[monthName], header)]}
             nodeTemplate={nodeTemplate}

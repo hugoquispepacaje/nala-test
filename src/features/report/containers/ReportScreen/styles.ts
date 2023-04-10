@@ -26,4 +26,11 @@ export default {
   label: {
     color: colors.white,
   },
+  infoContainer: {
+    display: 'flex',
+    flexWrap: 'wrap' as const,
+    gap: '2rem',
+    width: '100%',
+    justifyContent: 'center',
+  },
 };
