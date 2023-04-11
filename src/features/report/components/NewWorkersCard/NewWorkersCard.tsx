@@ -11,9 +11,11 @@ const TotalSalaryCard = ({ newWorkers }: Props) => {
     <p style={Styles.headerText}>{newWorkersTitle}</p>
   );
   return (
-    <Card header={renderHeader} style={Styles.container}>
-      {newWorkers.map((workerName) => <p key={workerName} style={Styles.text}>{workerName}</p>)}
-    </Card>
+    <div id="card-container">
+      <Card header={renderHeader} style={Styles.container}>
+        {newWorkers.map((workerName) => <p key={workerName} style={Styles.text}>{workerName}</p>)}
+      </Card>
+    </div>
   );
 };
 

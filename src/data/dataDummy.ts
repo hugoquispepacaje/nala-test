@@ -1,3 +1,9 @@
+/* eslint-disable quotes */
+/* eslint-disable quote-props */
+/* eslint-disable comma-dangle */
+// eslint-disable-next-line import/no-unresolved
+import TreeNode from 'primereact/treenode';
+
 interface Data {
   Mes: string,
   Nombre: string,
@@ -86,4 +92,383 @@ const dataDummy: Data[] = [
   },
 ];
 
-export default dataDummy;
+const months = {
+  "05-2020": [
+    {
+      "Mes": "01/05/2020",
+      "Nombre ": "Juan Pérez",
+      "ID": "2345234523",
+      "Fecha de ingreso": "01/04/2019",
+      "Sueldo  bruto": "1200000",
+      "División": "Ventas",
+      "Area": "Marketing",
+      "Subarea": "Digital",
+      "ID Lider": "324532",
+      "Nivel Jerárquico": "Manager",
+    },
+    {
+      "Mes": "01/05/2020",
+      "Nombre ": "Rodrigo Soto",
+      "ID": "7345734643",
+      "Fecha de ingreso": "01/10/2019",
+      "Sueldo  bruto": "900000",
+      "División": "Ventas",
+      "Area": "Marketing",
+      "Subarea": "Editorial",
+      "ID Lider": "2345234523",
+      "Nivel Jerárquico": "Supervisor",
+    },
+    {
+      "Mes": "01/05/2020",
+      "Nombre ": "Jaime González",
+      "ID": "3423424653",
+      "Fecha de ingreso": "11/04/2020",
+      "Sueldo  bruto": "800000",
+      "División": "Ventas",
+      "Area": "Regional",
+      "Subarea": "Regional",
+      "ID Lider": "7345734643",
+      "Nivel Jerárquico": "Profesioal",
+    },
+    {
+      "Mes": "01/05/2020",
+      "Nombre ": "Pedro Suárez",
+      "ID": "4564356543",
+      "Fecha de ingreso": "15/10/2019",
+      "Sueldo  bruto": "500000",
+      "División": "Operaciones",
+      "Area": "Soporte",
+      "Subarea": "Clientes",
+      "ID Lider": "3456345336",
+      "Nivel Jerárquico": "Profesional",
+    },
+    {
+      "Mes": "01/05/2020",
+      "Nombre ": "Jorge Jiménez",
+      "ID": "3456345336",
+      "Fecha de ingreso": "15/01/2020",
+      "Sueldo  bruto": "1000000",
+      "División": "Operaciones",
+      "Area": "Soporte",
+      "Subarea": "Clientes",
+      "ID Lider": "2345234523",
+      "Nivel Jerárquico": "Cordinador",
+    }
+  ],
+  "04-2020": [
+    {
+      "Mes": "01/04/2020",
+      "Nombre ": "Juan Pérez",
+      "ID": "2345234523",
+      "Fecha de ingreso": "01/04/2019",
+      "Sueldo  bruto": "1200000",
+      "División": "Ventas",
+      "Area": "Marketing",
+      "Subarea": "Digital",
+      "ID Lider": "324532",
+      "Nivel Jerárquico": "Manager",
+    },
+    {
+      "Mes": "01/04/2020",
+      "Nombre ": "Rodrigo Soto",
+      "ID": "7345734643",
+      "Fecha de ingreso": "01/10/2019",
+      "Sueldo  bruto": "800000",
+      "División": "Ventas",
+      "Area": "Marketing",
+      "Subarea": "Editorial",
+      "ID Lider": "3456345336",
+      "Nivel Jerárquico": "Profesional",
+    },
+    {
+      "Mes": "01/04/2020",
+      "Nombre ": "Jaime González",
+      "ID": "3423424653",
+      "Fecha de ingreso": "11/04/2020",
+      "Sueldo  bruto": "700000",
+      "División": "Ventas",
+      "Area": "Regional",
+      "Subarea": "Regional",
+      "ID Lider": "3456345336",
+      "Nivel Jerárquico": "Profesioal",
+    },
+    {
+      "Mes": "01/04/2020",
+      "Nombre ": "Pedro Suárez",
+      "ID": "4564356543",
+      "Fecha de ingreso": "15/10/2019",
+      "Sueldo  bruto": "500000",
+      "División": "Operaciones",
+      "Area": "Soporte",
+      "Subarea": "Clientes",
+      "ID Lider": "3456345336",
+      "Nivel Jerárquico": "Profesional",
+    },
+    {
+      "Mes": "01/04/2020",
+      "Nombre ": "Jorge Jiménez",
+      "ID": "3456345336",
+      "Fecha de ingreso": "15/01/2020",
+      "Sueldo  bruto": "800000",
+      "División": "Operaciones",
+      "Area": "Soporte",
+      "Subarea": "Clientes",
+      "ID Lider": "2345234523",
+      "Nivel Jerárquico": "Cordinador",
+    }
+  ],
+  "03-2020": [
+    {
+      "Mes": "01/03/2020",
+      "Nombre ": "Juan Pérez",
+      "ID": "2345234523",
+      "Fecha de ingreso": "01/04/2019",
+      "Sueldo  bruto": "1000000",
+      "División": "Ventas",
+      "Area": "Marketing",
+      "Subarea": "Digital",
+      "ID Lider": "324532",
+      "Nivel Jerárquico": "Manager",
+    },
+    {
+      "Mes": "01/03/2020",
+      "Nombre ": "Rodrigo Soto",
+      "ID": "7345734643",
+      "Fecha de ingreso": "01/10/2019",
+      "Sueldo  bruto": "800000",
+      "División": "Ventas",
+      "Area": "Marketing",
+      "Subarea": "Editorial",
+      "ID Lider": "3456345336",
+      "Nivel Jerárquico": "Profesional",
+    },
+    {
+      "Mes": "01/03/2020",
+      "Nombre ": "Pedro Suárez",
+      "ID": "4564356543",
+      "Fecha de ingreso": "15/10/2019",
+      "Sueldo  bruto": "500000",
+      "División": "Operaciones",
+      "Area": "Soporte",
+      "Subarea": "Clientes",
+      "ID Lider": "3456345336",
+      "Nivel Jerárquico": "Profesional",
+    },
+    {
+      "Mes": "01/03/2020",
+      "Nombre ": "Jorge Jiménez",
+      "ID": "3456345336",
+      "Fecha de ingreso": "15/01/2020",
+      "Sueldo  bruto": "800000",
+      "División": "Operaciones",
+      "Area": "Soporte",
+      "Subarea": "Clientes",
+      "ID Lider": "2345234523",
+      "Nivel Jerárquico": "Cordinador",
+    },
+  ],
+};
+
+const header = {
+  id: 'ID',
+  bossId: 'ID Lider',
+  department: 'División',
+  salary: 'Sueldo  bruto',
+  startDate: 'Fecha de ingreso',
+};
+
+const increaseSalaryWorkers = [
+  {
+    "name": "Rodrigo Soto",
+    "increaseSalary": 100000,
+  },
+  {
+    "name": "Jaime González",
+    "increaseSalary": 100000,
+  },
+];
+
+const workers = [
+  {
+    "Mes": "01/04/2020",
+    "Nombre ": "Juan Pérez",
+    "ID": "2345234523",
+    "Fecha de ingreso": "01/04/2019",
+    "Sueldo  bruto": "1200000",
+    "División": "Ventas",
+    "Area": "Marketing",
+    "Subarea": "Digital",
+    "ID Lider": "324532",
+    "Nivel Jerárquico": "Manager"
+  },
+  {
+    "Mes": "01/04/2020",
+    "Nombre ": "Rodrigo Soto",
+    "ID": "7345734643",
+    "Fecha de ingreso": "01/10/2019",
+    "Sueldo  bruto": "800000",
+    "División": "Ventas",
+    "Area": "Marketing",
+    "Subarea": "Editorial",
+    "ID Lider": "3456345336",
+    "Nivel Jerárquico": "Profesional"
+  },
+  {
+    "Mes": "01/04/2020",
+    "Nombre ": "Jaime González",
+    "ID": "3423424653",
+    "Fecha de ingreso": "11/04/2020",
+    "Sueldo  bruto": "700000",
+    "División": "Ventas",
+    "Area": "Regional",
+    "Subarea": "Regional",
+    "ID Lider": "3456345336",
+    "Nivel Jerárquico": "Profesioal"
+  },
+  {
+    "Mes": "01/04/2020",
+    "Nombre ": "Pedro Suárez",
+    "ID": "4564356543",
+    "Fecha de ingreso": "15/10/2019",
+    "Sueldo  bruto": "500000",
+    "División": "Operaciones",
+    "Area": "Soporte",
+    "Subarea": "Clientes",
+    "ID Lider": "3456345336",
+    "Nivel Jerárquico": "Profesional"
+  },
+  {
+    "Mes": "01/04/2020",
+    "Nombre ": "Jorge Jiménez",
+    "ID": "3456345336",
+    "Fecha de ingreso": "15/01/2020",
+    "Sueldo  bruto": "800000",
+    "División": "Operaciones",
+    "Area": "Soporte",
+    "Subarea": "Clientes",
+    "ID Lider": "2345234523",
+    "Nivel Jerárquico": "Cordinador"
+  }
+];
+
+const treeNode: TreeNode = {
+  "label": "Juan Pérez",
+  "expanded": false,
+  "style": {
+    "backgroundColor": "#2C64FA",
+    "color": "#FFFFFF",
+    "borderRadius": "1.5rem",
+  },
+  "data": {
+    "Mes": "01/04/2020",
+    "Nombre ": "Juan Pérez",
+    "ID": "2345234523",
+    "Fecha de ingreso": "01/04/2019",
+    "Sueldo  bruto": "1200000",
+    "División": "Ventas",
+    "Area": "Marketing",
+    "Subarea": "Digital",
+    "ID Lider": "0",
+    "Nivel Jerárquico": "Manager",
+  },
+  "children": [
+    {
+      "label": "Jorge Jiménez",
+      "expanded": false,
+      "style": {
+        "backgroundColor": "#2C64FA",
+        "color": "#FFFFFF",
+        "borderRadius": "1.5rem",
+      },
+      "data": {
+        "Mes": "01/04/2020",
+        "Nombre ": "Jorge Jiménez",
+        "ID": "3456345336",
+        "Fecha de ingreso": "15/01/2020",
+        "Sueldo  bruto": "800000",
+        "División": "Operaciones",
+        "Area": "Soporte",
+        "Subarea": "Clientes",
+        "ID Lider": "2345234523",
+        "Nivel Jerárquico": "Cordinador",
+      },
+      "children": [
+        {
+          "label": "Rodrigo Soto",
+          "expanded": false,
+          "style": {
+            "backgroundColor": "#2C64FA",
+            "color": "#FFFFFF",
+            "borderRadius": "1.5rem",
+          },
+          "data": {
+            "Mes": "01/04/2020",
+            "Nombre ": "Rodrigo Soto",
+            "ID": "7345734643",
+            "Fecha de ingreso": "01/10/2019",
+            "Sueldo  bruto": "800000",
+            "División": "Ventas",
+            "Area": "Marketing",
+            "Subarea": "Editorial",
+            "ID Lider": "3456345336",
+            "Nivel Jerárquico": "Profesional",
+          },
+          "children": [],
+        },
+        {
+          "label": "Jaime González",
+          "expanded": false,
+          "style": {
+            "backgroundColor": "#2C64FA",
+            "color": "#FFFFFF",
+            "borderRadius": "1.5rem",
+          },
+          "data": {
+            "Mes": "01/04/2020",
+            "Nombre ": "Jaime González",
+            "ID": "3423424653",
+            "Fecha de ingreso": "11/04/2020",
+            "Sueldo  bruto": "700000",
+            "División": "Ventas",
+            "Area": "Regional",
+            "Subarea": "Regional",
+            "ID Lider": "3456345336",
+            "Nivel Jerárquico": "Profesioal",
+          },
+          "children": [],
+        },
+        {
+          "label": "Pedro Suárez",
+          "expanded": false,
+          "style": {
+            "backgroundColor": "#2C64FA",
+            "color": "#FFFFFF",
+            "borderRadius": "1.5rem",
+          },
+          "data": {
+            "Mes": "01/04/2020",
+            "Nombre ": "Pedro Suárez",
+            "ID": "4564356543",
+            "Fecha de ingreso": "15/10/2019",
+            "Sueldo  bruto": "500000",
+            "División": "Operaciones",
+            "Area": "Soporte",
+            "Subarea": "Clientes",
+            "ID Lider": "3456345336",
+            "Nivel Jerárquico": "Profesional",
+          },
+          "children": [],
+        }
+      ]
+    }
+  ]
+};
+
+export {
+  dataDummy,
+  months,
+  header,
+  increaseSalaryWorkers,
+  workers,
+  treeNode,
+};

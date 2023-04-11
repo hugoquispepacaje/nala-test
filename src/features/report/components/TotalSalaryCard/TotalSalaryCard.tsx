@@ -10,9 +10,11 @@ const TotalSalaryCard = ({ totalSalary }: Props) => {
     <p style={Styles.headerText}>{totalSalaryTitle}</p>
   );
   return (
-    <Card style={Styles.container} header={renderHeader}>
-      <p style={Styles.text}>{totalSalary}</p>
-    </Card>
+    <div id="card-container">
+      <Card style={Styles.container} header={renderHeader}>
+        <p style={Styles.text}>{totalSalary}</p>
+      </Card>
+    </div>
   );
 };
 
