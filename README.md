@@ -12,6 +12,11 @@ Npm:
 - npm install
 - npm run dev
 
+Realizar Pruebas:
+
+- yarn test
+- npm run test
+
 Proyecto desplegado:
 
 https://nala.hugoquispe.cl/
